@@ -17,7 +17,7 @@ public class CarPooling {
 		String arriveeAdress = sc.nextLine();
 		
 		System.out.println("Veuillez entrer le nombre de place du véhicule :");
-		Integer nbPlaces = sc.nextInt();
+		String nbPlaces = sc.nextLine();
 		
 		System.out.println("Veuillez entrer une description du véhicule :");
 		String carDescription = sc.nextLine();
