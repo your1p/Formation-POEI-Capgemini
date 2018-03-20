@@ -2,7 +2,6 @@ package com.aplose.smooss.model;
 
 public enum MusicGenre {
 	Blues,
-	Chansons_Françaises,
 	Classical,
 	Electro,
 	French_Variety,
@@ -21,3 +20,4 @@ public enum MusicGenre {
 	Other_unclassified;
 	
 }
+
