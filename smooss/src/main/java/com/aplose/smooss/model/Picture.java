@@ -18,6 +18,5 @@ public class Picture
 	private String description = null;
 	private User author = null;
 	List<Comment> comments = new ArrayList<Comment>();
-
 	
 }
