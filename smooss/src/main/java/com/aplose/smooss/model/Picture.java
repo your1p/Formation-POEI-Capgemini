@@ -1,6 +1,7 @@
 package com.aplose.smooss.model;
 
 import java.awt.Image;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,7 +17,6 @@ public class Picture
 	private String name = null;
 	private String description = null;
 	private User author = null;
-	List<Comment> comments = new List<Comment>();
-
+	List<Comment> comments = new ArrayList<Comment>();
 	
 }
