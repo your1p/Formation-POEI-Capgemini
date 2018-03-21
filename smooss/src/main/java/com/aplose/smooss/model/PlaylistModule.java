@@ -8,18 +8,12 @@ import java.util.List;
  * @author tomas
  *
  */
-public class PlaylistModule 
-{
-	private List<String> playlist;
-	private String musicType;
+public class PlaylistModule extends Module {
 	
-	// Method main for a simple test, delete it after
-	public static void main(String[] args) 
-	{
-		for (MusicGenre musicType : MusicGenre.values()) 
-		{
-			System.out.println("Different type of music : " + musicType);
-		}
+	private List<Playlist> playlists;
+
+	public List<Playlist> getPlaylists() {
+		return playlists;
 	}
 	
 }
