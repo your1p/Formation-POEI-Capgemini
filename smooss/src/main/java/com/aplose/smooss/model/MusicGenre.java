@@ -25,6 +25,7 @@ public enum MusicGenre {
 	RnB,
 	Rock,
 	Techno,
+	Zouk,
 	World,
 	End_Of_The_Night,
 	Other_unclassified;
