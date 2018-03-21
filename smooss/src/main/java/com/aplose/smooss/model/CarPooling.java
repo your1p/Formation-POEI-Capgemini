@@ -3,6 +3,8 @@ package com.aplose.smooss.model;
 import java.util.Scanner;
 
 public class CarPooling {
+	
+// PENSER A ENLEVER LA METHODE MAIN LORS DE L'INTEGRATION (UTILISEE POUR LES TESTS)
 
 	public static void main(String[] args) {
 		
