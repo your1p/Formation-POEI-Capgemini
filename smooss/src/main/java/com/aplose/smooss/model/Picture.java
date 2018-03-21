@@ -17,6 +17,42 @@ public class Picture
 	private String name = null;
 	private String description = null;
 	private User author = null;
-	List<Comment> comments = new ArrayList<Comment>();
+	private List<Comment> comments = new ArrayList<Comment>();
+	
+	public Picture(Image picture, String name, String description, User author)
+	{
+		this.picture = picture;
+		this.name = name;
+		this.description = description;
+		this.author = author;
+	}
+	
+	public Image getPicture()
+	{
+		return picture;
+	}
+	
+	public String getName()
+	{
+		return name;
+	}
+	
+	public String getDescription()
+	{
+		return description;
+	}
+	
+	public User getAuthor()
+	{
+		return author;
+	}
+	
+	public void setComment(Comment comment)
+	{
+		comments.add(comment);
+	}
+	
+	
+	
 	
 }
