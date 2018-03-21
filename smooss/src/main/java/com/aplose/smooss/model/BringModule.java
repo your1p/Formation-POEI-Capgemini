@@ -1,5 +1,11 @@
 package com.aplose.smooss.model;
 
-public class BringModel {
+public class BringModule extends Module {
 
+	private TypeOfBring type;
+	
+	public TypeOfBring type() {
+		return type;
+	}
+	
 }
