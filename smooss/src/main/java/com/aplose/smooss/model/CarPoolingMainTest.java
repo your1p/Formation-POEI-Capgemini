@@ -40,5 +40,4 @@ System.out.println("Classe CarPooling");
 		System.out.print("NOTE DEV AFFICHAGE VARIABLES " +arriveeAdress + " " +departAdress + " " +nbPlaces + " " +carDescription + " " +allerRetour + " " +departureTime + " " +departureBackTime + " ");
 				
 	}
-
 }
