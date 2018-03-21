@@ -16,7 +16,7 @@ public class Picture
 	private String name = null;
 	private String description = null;
 	private User author = null;
-	//List<Comment> comments = new List<Comment>();
+	List<Comment> comments = new List<Comment>();
 
 	
 }
