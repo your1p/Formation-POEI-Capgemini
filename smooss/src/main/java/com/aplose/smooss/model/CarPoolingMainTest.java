@@ -35,7 +35,7 @@ System.out.println("Classe CarPooling");
 		
 		scan.close();
 		
-	//PENSER A ENLEVER CE SYSTEM OUT DE NOTE DE DEV		
+	//PENSER A ENLEVER LE SYSTEM OUT DE NOTE DE DEV		
 
 		System.out.print("NOTE DEV AFFICHAGE VARIABLES " +arriveeAdress + " " +departAdress + " " +nbPlaces + " " +carDescription + " " +allerRetour + " " +departureTime + " " +departureBackTime + " ");
 			
