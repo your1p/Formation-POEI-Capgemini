@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Event{
 
-	/////////Le attributs
-	//private Admin user ;
+	/////////	ATTRIBUTS DE LA CLASSE EVENT
+	private User admin ;
 	private String name;
 	private String description;
 	private String localisation;
@@ -16,6 +16,14 @@ public class Event{
 	
 	List<Module> modules = new ArrayList<Module>();
 	
+	//////GET SET ADMIN >>
+	public User getAdmin() {
+		return admin;
+	}
+	
+	public void setAdmin(User admin) {
+		this.admin = admin;
+	}
 	
 	//////GET SET NAME >>
 	public String getName() {
