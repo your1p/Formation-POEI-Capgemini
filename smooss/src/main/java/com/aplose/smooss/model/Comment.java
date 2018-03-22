@@ -1,31 +1,32 @@
 package com.aplose.smooss.model;
 
+import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Scanner;
 
 public class Comment {
-
-	public static void main(String[] args) {
-		
-		System.out.println("Comments Pictures");
-		
-		Calendar Calendrier = Calendar.getInstance();
-		int hour = Calendrier.get(Calendar.HOUR_OF_DAY);
-		int minute = Calendrier.get(Calendar.MINUTE);
-		int jour = Calendrier.get(Calendar.DATE);
-		int mois = Calendrier.get(Calendar.MONTH);
-		int année = Calendrier.get(Calendar.YEAR);
-		
-		
-		System.out.println(Calendrier.get(Calendar.DATE)+"/"+Calendrier.get(Calendar.MONTH)+"/"+Calendrier.get(Calendar.YEAR)+"  "+Calendrier.get(Calendar.HOUR_OF_DAY)+" h "+Calendrier.get(Calendar.MINUTE)+" min");
-		
-		
-		
-		
-			
-		
-		
-
-
+	private String comment;
+	private Instant createInstant; 
+	private User author;
+	
+	public String getComment() {
+		return comment;
 	}
-
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+	public Instant getCreateInstant() {
+		return createInstant;
+	}
+	public void setCreateInstant(Instant createInstant) {
+		this.createInstant = createInstant;
+	}
+	public User getAuthor() {
+		return author;
+	}
+	public void setAuthor(User author) {
+		this.author = author;
+	}
+	
 }
