@@ -31,7 +31,7 @@ public class Event{
 	}
 	
 	public void setName(String name) {
-		
+		this.name = name;
 	}
 	
 	//////GET SET NAME >>
@@ -40,7 +40,7 @@ public class Event{
 	}
 	
 	public void setDescription(String description) {
-		
+		this.description = description;
 	}
 	
 	/////GET SET LOCALISATION >>
@@ -49,16 +49,16 @@ public class Event{
 	}
 	
 	public void setLocalisation(String localisation) {
-		
+		this.localisation = localisation;
 	}
 	
 	////GET SET DATESTART
-	public Date getStart() {
-		return start;
+	public Date getStart() { //Une autre façon de noter le get
+		return this.start;
 	}
 	
-	public void setStart(Date start) {
-		
+	public void setStart(Date s) { // Une autre façon de noter le set
+		this.start = s;
 	}
 	
 	////GET SET DATEEND
@@ -67,7 +67,7 @@ public class Event{
 	}
 	
 	public void setEnd(Date end) {
-		
+		this.end = end;
 	}
 	
 	///GET LIST
