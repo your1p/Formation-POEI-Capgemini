@@ -1,10 +1,15 @@
 package com.aplose.smooss.model;
 
-public class Module {
+public abstract class Module {
+	private String name = "Default Module Name";
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public String getName() {
+		return name;
 	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
 }
