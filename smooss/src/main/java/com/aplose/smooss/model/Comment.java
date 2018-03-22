@@ -9,6 +9,7 @@ public class Comment {
 	private String comment;
 	private Instant createInstant; 
 	private User author;
+	
 	public String getComment() {
 		return comment;
 	}
