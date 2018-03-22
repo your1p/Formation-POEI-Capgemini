@@ -10,49 +10,48 @@ import java.util.List;
  * Last revision Martin M.
  */
 
-public class Picture
-{
+public class Picture {
 
-	private Image picture = null;
-	private String name = null;
-	private String description = null;
-	private User author = null;
+	private Image picture;
+	private String name;
+	private String description;
+	private User author;
 	private List<Comment> comments = new ArrayList<Comment>();
 	
-	public Picture(Image picture, String name, String description, User author)
-	{
+	public Picture(Image picture, String name, String description, User author){
 		this.picture = picture;
 		this.name = name;
 		this.description = description;
 		this.author = author;
 	}
 	
-	public Image getPicture()
-	{
+	public Image getPicture(){
 		return picture;
 	}
 	
-	public String getName()
-	{
+	public String getName(){
 		return name;
 	}
 	
-	public String getDescription()
-	{
+	public void setName(String newName){
+		this.name = newName;
+	}
+	
+	public String getDescription(){
 		return description;
 	}
 	
-	public User getAuthor()
-	{
+	public void setDescription(String newDescription){
+		this.description = newDescription;
+	}
+	
+	public User getAuthor(){
 		return author;
 	}
 	
-	public void setComment(Comment comment)
-	{
-		comments.add(comment);
+	public List<Comment> getComments(){
+		return comments;
+		
 	}
-	
-	
-	
 	
 }
