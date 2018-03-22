@@ -4,15 +4,66 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Event extends User{
+public class Event{
 
-
-	//private Admin User ;
-	private String name = null;
-	private String description = null;
-	private String localisation = null;
-	private Date start = null;
-	private Date end = null;
+	/////////Le attributs
+	//private Admin user ;
+	private String name;
+	private String description;
+	private String localisation;
+	private Date start;
+	private Date end;
 	
 	List<Module> modules = new ArrayList<Module>();
+	
+	
+	//////GET SET NAME >>
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		
+	}
+	
+	//////GET SET NAME >>
+	public String getDescription() {
+		return description;
+	}
+	
+	public void setDescription(String description) {
+		
+	}
+	
+	/////GET SET LOCALISATION >>
+	public String getLocalisation() {
+		return localisation;
+	}
+	
+	public void setLocalisation(String localisation) {
+		
+	}
+	
+	////GET SET DATESTART
+	public Date getStart() {
+		return start;
+	}
+	
+	public void setStart(Date start) {
+		
+	}
+	
+	////GET SET DATEEND
+	public Date getEnd() {
+		return end;
+	}
+	
+	public void setEnd(Date end) {
+		
+	}
+	
+	///GET LIST
+	public List<Module> getModules() {
+		return modules;
+	}
 }
