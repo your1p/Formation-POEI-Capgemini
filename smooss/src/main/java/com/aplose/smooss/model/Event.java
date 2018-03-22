@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Event{
 
-	/////////	ATTRIBUTS DE LA CLASSE EVENT
+	////////	ATTRIBUTS DE LA CLASSE EVENT
 	private User admin ;
 	private String name;
 	private String description;
