@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.List;
 
 public class Event{
+	
+	private long id;
 
 	////////	ATTRIBUTS DE LA CLASSE EVENT
 	private User admin ;
@@ -16,6 +18,15 @@ public class Event{
 	
 	List<Module> modules = new ArrayList<Module>();
 	
+	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	//////GET SET ADMIN >>
 	public User getAdmin() {
 		return admin;
