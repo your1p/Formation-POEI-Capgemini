@@ -1,5 +1,6 @@
 package com.aplose.smooss.services;
 
+import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
 import com.aplose.smooss.model.User;
@@ -7,8 +8,6 @@ import com.aplose.smooss.model.User;
 public class UserService {
 
 	private static UserService INSTANCE = null;
-	
-	
 	private TypedQuery<User> findByLoginsAndPasswords;
 
 	private UserService() {
@@ -35,14 +34,26 @@ public class UserService {
 		return u;
 	}
 	
-	private User findByLoginAndPassword(String login, String password) {
-		String query = "Select u from User where login =: login AND password =: password";
-		User u;
-		findByLoginsAndPasswords = u.createQuery("query", User.class);
-		findByLoginsAndPasswords.setParameter(login, User.class);
-		findByLoginsAndPasswords.setParameter(password, User.class);
-		User u = findByLoginsAndPasswords.getSingleResult();
+	public User findByLoginAndPassword(String login, String password) {
+
+		User u = null;
+		
+		if(findByLoginsAndPasswords == null) {
+			findByLoginsAndPasswords = JPASingleton.getInstance().getEntityManager().createQuery("Select u from User u where login = :login AND password = :password", User.class);
+		}
+		
+		findByLoginsAndPasswords.setParameter("login", login);
+		findByLoginsAndPasswords.setParameter("password", password);
+		
+		try {
+			u = findByLoginsAndPasswords.getSingleResult();
+		} catch (NoResultException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		return u;
+		
 	}
 
 }
