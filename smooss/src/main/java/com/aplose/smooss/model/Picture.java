@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  * Picture Class, create a picture.
@@ -19,21 +21,23 @@ public class Picture {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
-	private Image picture;
+	private String pictureBase64;
 	private String name;
 	private String description;
+	@ManyToOne
 	private User author;
+	@OneToMany
 	private List<Comment> comments = new ArrayList<Comment>();
 	
-	public Picture(Image picture, String name, String description, User author){
-		this.picture = picture;
+	public Picture(String pictureBase64, String name, String description, User author){
+		this.pictureBase64 = pictureBase64;
 		this.name = name;
 		this.description = description;
 		this.author = author;
 	}
 	
-	public Image getPicture(){
-		return picture;
+	public String getPictureBase64(){
+		return pictureBase64;
 	}
 	
 	public String getName(){

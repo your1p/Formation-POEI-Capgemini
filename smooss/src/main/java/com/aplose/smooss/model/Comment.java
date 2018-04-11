@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Comment {
@@ -15,6 +16,7 @@ public class Comment {
 	private String comment;
 	private Instant date;
 	private Instant hour;
+	@ManyToOne
 	private User author;
 
 	public String getComment() {
