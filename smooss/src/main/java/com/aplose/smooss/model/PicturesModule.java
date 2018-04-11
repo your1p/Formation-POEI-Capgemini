@@ -3,8 +3,13 @@ package com.aplose.smooss.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+
+@Entity
 public class PicturesModule extends Module {
 
+	@OneToMany
 	private List<PicturesModule> picture;
 
 	public List<PicturesModule> asList(PicturesModule[] picture) {

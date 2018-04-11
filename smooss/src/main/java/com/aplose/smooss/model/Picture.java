@@ -4,14 +4,21 @@ import java.awt.Image;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * Picture Class, create a picture.
  * @author Smooss Team
  * Last revision Martin M.
  */
-
+@Entity
 public class Picture {
-
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long id;
 	private Image picture;
 	private String name;
 	private String description;
