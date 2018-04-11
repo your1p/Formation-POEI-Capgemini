@@ -11,23 +11,20 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	private long login;
-	private long password;
+	private String login;
+	private String password;
 	
 	//Getters & Setters
-	public long getLogin() {
+	public String getLogin() {
 		return login;
 	}
-	public long getId() {
-		return id;
-	}
-	public void setLogin(long login) {
+	public void setLogin(String login) {
 		this.login = login;
 	}
-	public long getPassword() {
+	public String getPassword() {
 		return password;
 	}
-	public void setPassword(long password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 	
