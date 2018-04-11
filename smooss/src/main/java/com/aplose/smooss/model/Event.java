@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Event{
-	
+
 	private long id;
 
 	////////	ATTRIBUTS DE LA CLASSE EVENT
