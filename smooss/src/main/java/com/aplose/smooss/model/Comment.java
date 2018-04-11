@@ -1,9 +1,6 @@
 package com.aplose.smooss.model;
 
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Scanner;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,26 +13,40 @@ public class Comment {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	private String comment;
-	private Instant createInstant; 
+	private Instant date;
+	private Instant hour;
 	private User author;
-	
+
 	public String getComment() {
 		return comment;
 	}
+
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
-	public Instant getCreateInstant() {
-		return createInstant;
+
+	public Instant getDate() {
+		return date;
 	}
-	public void setCreateInstant(Instant createInstant) {
-		this.createInstant = createInstant;
+
+	public void setDate(Instant date) {
+		this.date = date;
 	}
+
+	public Instant getHour() {
+		return date;
+	}
+
+	public void setHour(Instant hour) {
+		this.hour = hour;
+	}
+
 	public User getAuthor() {
 		return author;
 	}
+
 	public void setAuthor(User author) {
 		this.author = author;
 	}
-	
+
 }
