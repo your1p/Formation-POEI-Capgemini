@@ -1,8 +1,14 @@
 package com.aplose.smooss.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+
+@Entity
 public class BringModule extends Module {
 	
+	@Enumerated
 	private TypeOfBring type;
+	
 	public TypeOfBring getType() {
 		return type;
 	}

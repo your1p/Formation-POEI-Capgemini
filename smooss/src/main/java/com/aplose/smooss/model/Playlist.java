@@ -2,9 +2,22 @@ package com.aplose.smooss.model;
 
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.ManyToMany;
+
+
+/**
+ * 
+ * @author thomas
+ *
+ */
+@Entity
 public class Playlist {
 	
-	private List<String> urls;
+	@ManyToMany
+	private List<Url> urls;
+	@Enumerated
 	private MusicGenre genre;
 	
 	
@@ -16,7 +29,7 @@ public class Playlist {
 		this.genre = genre;
 	}
 	
-	public List<String> getUrls() {
+	public List<Url> getUrls() {
 		return urls;
 	}
 	
