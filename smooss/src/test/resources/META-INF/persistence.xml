@@ -19,10 +19,10 @@
 		<class>com.aplose.smooss.model.Event</class>
 		<class>com.aplose.smooss.model.User</class>
         <properties>
-	        <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/smooss?useUnicode=true"/>
-            <property name="javax.persistence.jdbc.user" value="smooss"/>
-            <property name="javax.persistence.jdbc.password" value="Formation01"/>
+	        <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:test"/>
+            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
            	<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
         </properties>
 	
