@@ -18,6 +18,9 @@ public class User {
 	public long getLogin() {
 		return login;
 	}
+	public long getId() {
+		return id;
+	}
 	public void setLogin(long login) {
 		this.login = login;
 	}
