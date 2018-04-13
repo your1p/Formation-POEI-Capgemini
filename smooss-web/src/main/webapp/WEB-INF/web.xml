@@ -12,6 +12,7 @@
             <param-value>GET, POST, PUT, DELETE, OPTIONS, HEAD</param-value>
         </init-param>    
     </filter>
+    
     <filter-mapping>
         <filter-name>CorsFilter</filter-name>
         <url-pattern>/*</url-pattern>
