@@ -1,15 +1,12 @@
 package com.aplose.smooss.services;
 
-import java.util.Calendar;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
-import javax.persistence.FlushModeType;
-import javax.persistence.LockModeType;
-import javax.persistence.Parameter;
-import javax.persistence.TemporalType;
+//import javax.naming.spi.DirStateFactory.Result;
+//import java.util.List;
+//import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
 import com.aplose.smooss.model.Invite;
@@ -18,6 +15,7 @@ import com.aplose.smooss.model.User;
 public class InviteService {
 	
 	private static InviteService INSTANCE;
+	private TypedQuery<Invite> findInviteByUser;
 	
 	private InviteService () {}
 	
@@ -35,16 +33,25 @@ public class InviteService {
 	public Invite read(long id) {
 		Invite ivt = JPASingleton.getInstance().getEntityManager().find(Invite.class, id);
 		return ivt;
-	}
-	
-	public List <User> findInviteByUser(User id) {
-		String query = "SELECT id FROM user WHERE login=:login";
-
-			
-
-
-		
-		return null;
 	} 
 
+	
+	public List<Invite> findInvitesByUser(User login) {
+		List<Invite> result = new ArrayList<>();
+//		Invite i = null;
+		if(findInviteByUser == null) {
+			findInviteByUser = JPASingleton.getInstance().getEntityManager().createQuery("SELECT i FROM Invite i, User u WHERE event=:event, invited=:invited",Invite.class);
+
+		}
+		findInviteByUser.setParameter("login", login);
+		
+		try {
+			result = findInviteByUser.getResultList();
+		} catch (NoResultException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
 }
