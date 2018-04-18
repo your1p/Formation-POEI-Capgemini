@@ -27,6 +27,7 @@ public class Event{
 	private String localisation;
 	private Instant start;
 	private Instant end;
+	private String picture;
 	
 	@OneToMany
 	List<Module> modules = new ArrayList<Module>();
@@ -104,5 +105,13 @@ public class Event{
 	///GET LIST
 	public List<Module> getModules() {
 		return modules;
+	}
+	
+	public String getPicture() {
+		return picture;
+	}
+	
+	public void setPicture(String picture) {
+		this.picture = picture;
 	}
 }

@@ -9,13 +9,10 @@ import javax.persistence.OneToMany;
 public class CarPoolingModule extends Module {
 
 	@OneToMany
-	private List<String> carPooling;
+	private List<CarPooling> carPooling;
 
-	public List<String> getCarPooling() {
+	public List<CarPooling> getCarPooling() {
 		return carPooling;
 	}
-	
-	
-	
 	
 }
