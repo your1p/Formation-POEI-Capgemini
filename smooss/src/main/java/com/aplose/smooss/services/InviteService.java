@@ -30,14 +30,14 @@ public class InviteService {
 		JPASingleton.getInstance().getEntityManager().persist(ivt);
 		JPASingleton.getInstance().getEntityManager().getTransaction().commit();
 	}
+
 	public Invite read(long id) {
 		Invite ivt = JPASingleton.getInstance().getEntityManager().find(Invite.class, id);
 		return ivt;
-	} 
-
+	}
 	
 	public List<Invite> findInvitesByUser(User login) {
-		List<Invite> result = new ArrayList<>();
+		List<Invite> result = new ArrayList<Invite>();
 //		Invite i = null;
 		if(findInviteByUser == null) {
 			findInviteByUser = JPASingleton.getInstance().getEntityManager().createQuery("SELECT i FROM Invite i, User u WHERE event=:event, invited=:invited",Invite.class);
