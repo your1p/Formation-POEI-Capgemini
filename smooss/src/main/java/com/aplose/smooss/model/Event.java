@@ -1,5 +1,6 @@
 package com.aplose.smooss.model;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -25,8 +26,9 @@ public class Event{
 	private String name;
 	private String description;
 	private String localisation;
-	private Date start;
-	private Date end;
+	private Instant start;
+	private Instant end;
+	private String picture;
 	
 	@OneToMany
 	List<Module> modules = new ArrayList<Module>();
@@ -35,63 +37,73 @@ public class Event{
 	List<User> participants = new ArrayList<User>();
 
 	
-	private long getId() {
+	public long getId() {
 		return id;
 	}
 
-	private void setId(long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
 	//////GET SET ADMIN >>
-	private User getAdmin() {
+	public User getAdmin() {
 		return admin;
 	}
 	
-	private void setAdmin(User admin) {
+	public void setAdmin(User admin) {
 		this.admin = admin;
 	}
 	
 	//////GET SET NAME >>
-	private String getName() {
+	public String getName() {
 		return name;
 	}
 	
-	private void setName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 	
 	//////GET SET NAME >>
-	private String getDescription() {
+	public String getDescription() {
 		return description;
 	}
 	
-	private void setDescription(String description) {
+	public void setDescription(String description) {
 		this.description = description;
 	}
 	
 	/////GET SET LOCALISATION >>
-	private String getLocalisation() {
+	public String getLocalisation() {
 		return localisation;
 	}
 	
-	private void setLocalisation(String localisation) {
+	public void setLocalisation(String localisation) {
 		this.localisation = localisation;
 	}
 	
+<<<<<<< HEAD
 	private Date getStart() { //Une autre façon de noter le get
+=======
+	////GET SET DATESTART
+	public Instant getStart() { //Une autre façon de noter le get
+>>>>>>> 7a4ca8d8fda84d61d6ef3aafee7163ae14711bf1
 		return this.start;
 	}
 	
-	private void setStart(Date s) { // Une autre façon de noter le set
+	public void setStart(Instant s) { // Une autre façon de noter le set
 		this.start = s;
 	}
 	
+<<<<<<< HEAD
 	private Date getEnd() {
+=======
+	////GET SET DATEEND
+	public Instant getEnd() {
+>>>>>>> 7a4ca8d8fda84d61d6ef3aafee7163ae14711bf1
 		return end;
 	}
 	
-	private void setEnd(Date end) {
+	public void setEnd(Instant end) {
 		this.end = end;
 	}
 	
@@ -99,7 +111,20 @@ public class Event{
 		return participants;
 	}
 
+<<<<<<< HEAD
 	private List<Module> getModules() {
+=======
+	///GET LIST
+	public List<Module> getModules() {
+>>>>>>> 7a4ca8d8fda84d61d6ef3aafee7163ae14711bf1
 		return modules;
+	}
+	
+	public String getPicture() {
+		return picture;
+	}
+	
+	public void setPicture(String picture) {
+		this.picture = picture;
 	}
 }

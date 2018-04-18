@@ -29,6 +29,8 @@ public class Picture {
 	@OneToMany
 	private List<Comment> comments = new ArrayList<Comment>();
 	
+	public Picture() {};
+	
 	public Picture(String pictureBase64, String name, String description, User author){
 		this.pictureBase64 = pictureBase64;
 		this.name = name;
