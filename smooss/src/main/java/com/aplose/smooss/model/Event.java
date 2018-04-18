@@ -80,6 +80,7 @@ public class Event{
 		this.localisation = localisation;
 	}
 	
+
 	////GET SET DATESTART
 	public Instant getStart() { //Une autre façon de noter le get
 		return this.start;
@@ -89,6 +90,7 @@ public class Event{
 		this.start = s;
 	}
 	
+
 	////GET SET DATEEND
 	public Instant getEnd() {
 		return end;

@@ -6,22 +6,44 @@ import junit.framework.TestCase;
 
 public class UserServiceTest extends TestCase {
 	
-	public void testFindByLoginAndPassword() {
+//	public void testFindByLoginAndPassword() {
+//		
+//		UserService us = UserService.getInstance();
+//		User u = new User();
+//		u.setLogin("Gustave");
+//		u.setPassword("password");
+//		us.create(u);
+//		
+//		User u2 = us.findByLoginAndPassword("Gustave", "password");
+//		assertNotNull(u2);
+//		assertEquals(u.getId(), u2.getId());
+//		
+//		User u3 = us.findByLoginAndPassword("Gustave", "badpassword");
+//		assertNull(u3);
+//		
+//	}
+	
+	public void testUpdate() {
 		
-		UserService us = UserService.getInstance();
+		
+		UserService us =  UserService.getInstance();
 		User u = new User();
-		u.setLogin("Gustave");
-		u.setPassword("password");
-		us.create(u);
+		u.setEmail("bouboudbz@gmail.com");
+		u.setFirstName("boubou");
+		long id = u.getId();
+		u.setLogin("bouboulogin");
+		u.setName("majinbou");
+		u.setPassword("bouboukiki");
 		
-		User u2 = us.findByLoginAndPassword("Gustave", "password");
-		assertNotNull(u2);
-		assertEquals(u.getId(), u2.getId());
+		if(u.getId()> 0 ) {
+			System.out.println("On récupère l'id : "+id);
+			us.update(u);
+		}
 		
 		
 		User u3 = us.findByLoginAndPassword("Gustave", "badpassword");
 		assertNull(u3);
-		
+
 	}
 
 }

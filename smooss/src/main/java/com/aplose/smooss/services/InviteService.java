@@ -30,11 +30,11 @@ public class InviteService {
 		JPASingleton.getInstance().getEntityManager().persist(ivt);
 		JPASingleton.getInstance().getEntityManager().getTransaction().commit();
 	}
+
 	public Invite read(long id) {
 		Invite ivt = JPASingleton.getInstance().getEntityManager().find(Invite.class, id);
 		return ivt;
-	} 
-
+	}
 	
 	public List<Invite> findInvitesByUser(User login) {
 		List<Invite> result = new ArrayList<>();
