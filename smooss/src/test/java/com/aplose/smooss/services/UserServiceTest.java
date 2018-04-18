@@ -28,11 +28,11 @@ public class UserServiceTest extends TestCase {
 		
 		UserService us =  UserService.getInstance();
 		User u = new User();
-		u.setEmail("bouboudbz@gmail.com");
+		u.setLogin("bouboudbz@gmail.com");
 		u.setFirstName("boubou");
 		long id = u.getId();
 		u.setLogin("bouboulogin");
-		u.setName("majinbou");
+		u.setFirstName("majinbou");
 		u.setPassword("bouboukiki");
 		
 		if(u.getId()> 0 ) {
