@@ -17,7 +17,6 @@ public class EventServiceTest extends TestCase {
 		u.setLogin("Gustave");
 		u.setPassword("password");
 		us.create(u);
-		assertEquals(1L, u.getId());
 		
 		EventService es = EventService.getInstance();
 		Event e = new Event();
@@ -33,6 +32,30 @@ public class EventServiceTest extends TestCase {
 		List<Event> result = es.findEventsByUser(u);
 		assertEquals(1, result.size());
 //		assertEquals(2, result.size());
+	}
+	
+	public void testModify() {
+		
+		EventService es = EventService.getInstance();
+		Event e = new Event();
+		
+		e.setName("Happy Birthday");
+		e.setDescription("Anniversaire de bob");
+		e.setLocalisation("Rond point du grand M");
+		e.setStart(Instant.now());
+		e.setEnd(Instant.parse("2018-04-18T22:00:00Z"));
+		es.create(e);
+				
+		Event e2 = es.read(e.getId());
+		e2.setName("Happy Holliday");
+		es.modify(e2);
+		
+		Event e3 = es.read(e.getId());
+		
+
+		assertEquals(e.getName(), e3.getName());
+		
+		
 	}
 
 }

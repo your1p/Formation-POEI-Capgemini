@@ -45,4 +45,11 @@ public class EventService {
 		return result;
 	}
 
+	public void modify(Event evt) {
+		JPASingleton.getInstance().getEntityManager().getTransaction().begin();
+		JPASingleton.getInstance().getEntityManager().merge(evt);
+		JPASingleton.getInstance().getEntityManager().getTransaction().commit();
+	}
+	
+	
 }
