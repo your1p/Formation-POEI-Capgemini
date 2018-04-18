@@ -38,14 +38,11 @@ public class EventService {
 	public List<Event> findEventsByUser(User user) {
 		if (queryFindEventByUser == null) {
 			EntityManager em = JPASingleton.getInstance().getEntityManager();
-			queryFindEventByUser = em.createQuery("SELECT e FROM Event e WHERE admin = :user ", Event.class);
+			queryFindEventByUser = em.createQuery("SELECT e FROM Event WHERE u.userID= :id ", Event.class);
 		}
-		queryFindEventByUser.setParameter("user", user);
+		queryFindEventByUser.setParameter("id", user.getId());
 		List<Event> result = queryFindEventByUser.getResultList();
-		
 		return result;
 	}
-	
-	
 
 }
