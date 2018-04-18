@@ -34,6 +34,26 @@ public class UserService {
 		return u;
 	}
 	
+	
+	
+	
+	/**
+	 * L'opération Update
+	 * @param u La personne à mettre à jour dans la base de données.
+	 * @return La personne mise à jour
+	 */
+	public User update(User u) {
+		
+		u = JPASingleton.getInstance().getEntityManager().find(User.class, u);
+		
+		System.out.println("boubou >> " + u);
+		
+		JPASingleton.getInstance().getEntityManager().getTransaction().begin();
+		u = JPASingleton.getInstance().getEntityManager().merge(u);
+		JPASingleton.getInstance().getEntityManager().getTransaction().commit();
+		return u;
+	}
+	
 	public User findByLoginAndPassword(String login, String password) {
 
 		User u = null;
@@ -56,6 +76,8 @@ public class UserService {
 		return u;
 		
 	}
+	
+	
 
 }
 
