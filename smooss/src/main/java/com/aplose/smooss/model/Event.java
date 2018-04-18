@@ -1,5 +1,6 @@
 package com.aplose.smooss.model;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -25,9 +26,8 @@ public class Event{
 	private String name;
 	private String description;
 	private String localisation;
-	private Date start;
-	private Date end;
-	private String picture;
+	private Instant start;
+	private Instant end;
 	
 	@OneToMany
 	List<Module> modules = new ArrayList<Module>();
