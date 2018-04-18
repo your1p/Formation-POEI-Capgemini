@@ -79,7 +79,6 @@ public class Event{
 		this.localisation = localisation;
 	}
 	
-	////GET SET DATESTART
 	private Date getStart() { //Une autre façon de noter le get
 		return this.start;
 	}
@@ -88,7 +87,6 @@ public class Event{
 		this.start = s;
 	}
 	
-	////GET SET DATEEND
 	private Date getEnd() {
 		return end;
 	}
@@ -101,7 +99,6 @@ public class Event{
 		return participants;
 	}
 
-	///GET LIST
 	private List<Module> getModules() {
 		return modules;
 	}

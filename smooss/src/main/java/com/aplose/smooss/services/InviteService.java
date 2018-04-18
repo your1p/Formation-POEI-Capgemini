@@ -41,8 +41,6 @@ public class InviteService {
 		String query = "SELECT id FROM user WHERE login=:login";
 
 			
-
-
 		
 		return null;
 	} 
