@@ -5,13 +5,17 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
+import com.aplose.smooss.factory.FactoryModule;
 import com.aplose.smooss.model.Event;
+import com.aplose.smooss.model.Module;
+import com.aplose.smooss.model.Module.TypeModule;
 import com.aplose.smooss.model.User;
 
 public class EventService {
 
 	private static EventService INSTANCE;
 	private TypedQuery<Event> queryFindEventByUser;
+	private static FactoryModule fm = new FactoryModule();
 
 	private EventService() {
 	}
@@ -44,5 +48,14 @@ public class EventService {
 		List<Event> result = queryFindEventByUser.getResultList();
 		return result;
 	}
+	public void addModuleByEvent(Event evt, TypeModule tm) {
+		Module m = fm.creerModule(tm);
+		evt.getModules().add(m);
+		JPASingleton.getInstance().getEntityManager().getTransaction().begin();
+		JPASingleton.getInstance().getEntityManager().persist(m);
+		JPASingleton.getInstance().getEntityManager().merge(evt);
+		JPASingleton.getInstance().getEntityManager().getTransaction().commit();
+	}
+	
 
 }

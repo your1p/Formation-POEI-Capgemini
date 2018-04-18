@@ -31,6 +31,7 @@ public class Event{
 	@OneToMany
 	List<Module> modules = new ArrayList<Module>();
 	
+	
 	@ManyToMany
 	List<User> participants = new ArrayList<User>();
 
@@ -97,12 +98,15 @@ public class Event{
 		this.end = end;
 	}
 	
+	///GET LIST
 	public List<User> getParticipants() {
 		return participants;
 	}
 
-	///GET LIST
-	private List<Module> getModules() {
+	public List<Module> getModules() {
 		return modules;
 	}
+
+	
+	
 }

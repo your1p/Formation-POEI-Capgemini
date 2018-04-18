@@ -20,5 +20,7 @@ public abstract class Module {
 		this.name = name;
 	}
 	
-	
+	public enum TypeModule {
+		CarpoolingModule, BringModule, PicturesModule, PlaylistModule,
+	}
 }
