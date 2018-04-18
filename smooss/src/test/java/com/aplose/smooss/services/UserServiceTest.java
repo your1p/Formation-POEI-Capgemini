@@ -18,6 +18,7 @@ public class UserServiceTest extends TestCase {
 		assertNotNull(u2);
 		assertEquals(u.getId(), u2.getId());
 		
+		
 		User u3 = us.findByLoginAndPassword("Gustave", "badpassword");
 		assertNull(u3);
 		
