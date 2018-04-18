@@ -28,6 +28,7 @@ public class Event{
 	private String localisation;
 	private Instant start;
 	private Instant end;
+	private String picture;
 	
 	@OneToMany
 	List<Module> modules = new ArrayList<Module>();
@@ -81,20 +82,20 @@ public class Event{
 	}
 	
 	////GET SET DATESTART
-	public Date getStart() { //Une autre façon de noter le get
+	public Instant getStart() { //Une autre façon de noter le get
 		return this.start;
 	}
 	
-	public void setStart(Date s) { // Une autre façon de noter le set
+	public void setStart(Instant s) { // Une autre façon de noter le set
 		this.start = s;
 	}
 	
 	////GET SET DATEEND
-	public Date getEnd() {
+	public Instant getEnd() {
 		return end;
 	}
 	
-	public void setEnd(Date end) {
+	public void setEnd(Instant end) {
 		this.end = end;
 	}
 	
