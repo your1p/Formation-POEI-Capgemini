@@ -51,5 +51,4 @@ public class EventService {
 		JPASingleton.getInstance().getEntityManager().getTransaction().commit();
 	}
 	
-	
 }
