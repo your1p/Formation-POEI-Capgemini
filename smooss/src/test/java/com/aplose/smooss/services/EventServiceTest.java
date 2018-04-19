@@ -14,7 +14,7 @@ public class EventServiceTest extends TestCase {
 		
 		UserService us = UserService.getInstance();
 		User u = new User();
-		u.setLogin("Gustave");
+		u.setEmail("Gustave");
 		u.setPassword("password");
 		us.create(u);
 		
