@@ -22,7 +22,7 @@
 	        <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/smooss?useUnicode=true"/>
             <property name="javax.persistence.jdbc.user" value="smooss"/>
-            <property name="javax.persistence.jdbc.password" value="Formation01"/>
+            <property name="javax.persistence.jdbc.password" value="smooss"/>
            	<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
         </properties>
 	
