@@ -49,7 +49,7 @@ public class UserService {
 		System.out.println("boubou >> " + u);
 		
 		JPASingleton.getInstance().getEntityManager().getTransaction().begin();
-		u = JPASingleton.getInstance().getEntityManager().merge(u);
+		JPASingleton.getInstance().getEntityManager().merge(u);
 		JPASingleton.getInstance().getEntityManager().getTransaction().commit();
 		return u;
 	}
@@ -76,6 +76,8 @@ public class UserService {
 		return u;
 		
 	}
+	
+	
 	
 	
 
