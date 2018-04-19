@@ -41,7 +41,7 @@ public class UserServiceTest extends TestCase {
 		}
 		
 		
-		User u3 = us.findByLoginAndPassword("Gustave", "badpassword");
+		User u3 = us.findByEmailAndPassword("Gustave", "badpassword");
 		assertNull(u3);
 
 	}
