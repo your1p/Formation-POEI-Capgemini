@@ -8,7 +8,7 @@ import com.aplose.smooss.model.User;
 public class UserService {
 
 	private static UserService INSTANCE = null;
-	private TypedQuery<User> findByLoginsAndPasswords;
+	private TypedQuery<User> findByEmailAndPasswords;
 
 	private UserService() {
 	}
@@ -54,19 +54,19 @@ public class UserService {
 		return u;
 	}
 	
-	public User findByLoginAndPassword(String login, String password) {
+	public User findByEmailAndPassword(String email, String password) {
 
 		User u = null;
 		
-		if(findByLoginsAndPasswords == null) {
-			findByLoginsAndPasswords = JPASingleton.getInstance().getEntityManager().createQuery("Select u from User u where login = :login AND password = :password", User.class);
+		if(findByEmailAndPasswords == null) {
+			findByEmailAndPasswords = JPASingleton.getInstance().getEntityManager().createQuery("Select u from User u where email = :email AND password = :password", User.class);
 		}
 		
-		findByLoginsAndPasswords.setParameter("login", login);
-		findByLoginsAndPasswords.setParameter("password", password);
+		findByEmailAndPasswords.setParameter("email", email);
+		findByEmailAndPasswords.setParameter("password", password);
 		
 		try {
-			u = findByLoginsAndPasswords.getSingleResult();
+			u = findByEmailAndPasswords.getSingleResult();
 		} catch (NoResultException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

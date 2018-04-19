@@ -10,7 +10,7 @@ public class UserServiceTest extends TestCase {
 //		
 //		UserService us = UserService.getInstance();
 //		User u = new User();
-//		u.setLogin("Gustave");
+//		u.setEmail("Gustave");
 //		u.setPassword("password");
 //		us.create(u);
 //		
@@ -28,10 +28,10 @@ public class UserServiceTest extends TestCase {
 		
 		UserService us =  UserService.getInstance();
 		User u = new User();
-		u.setLogin("bouboudbz@gmail.com");
+		u.setEmail("bouboudbz@gmail.com");
 		u.setFirstName("boubou");
 		long id = u.getId();
-		u.setLogin("bouboulogin");
+		u.setEmail("bouboulogin");
 		u.setFirstName("majinbou");
 		u.setPassword("bouboukiki");
 		
@@ -41,7 +41,7 @@ public class UserServiceTest extends TestCase {
 		}
 		
 		
-		User u3 = us.findByLoginAndPassword("Gustave", "badpassword");
+		User u3 = us.findByEmailAndPassword("Gustave", "badpassword");
 		assertNull(u3);
 
 	}

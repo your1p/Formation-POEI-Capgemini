@@ -6,13 +6,13 @@
   <persistence-unit name="SmoossPU">
  	
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		<class>com.aplose.smooss.model.CarpoolingModule</class>
+		<class>com.aplose.smooss.model.CarPoolingModule</class>
 		<class>com.aplose.smooss.model.BringModule</class>
 		<class>com.aplose.smooss.model.PicturesModule</class>
 		<class>com.aplose.smooss.model.PlaylistModule</class>
 		<class>com.aplose.smooss.model.Url</class>
 		<class>com.aplose.smooss.model.Playlist</class>
-		<class>com.aplose.smooss.model.Carpooling</class>
+		<class>com.aplose.smooss.model.CarPooling</class>
 		<class>com.aplose.smooss.model.Comment</class>
 		<class>com.aplose.smooss.model.Picture</class>
 		<class>com.aplose.smooss.model.Module</class>
