@@ -6,7 +6,7 @@ import com.aplose.smooss.model.Module;
 import com.aplose.smooss.model.Module.TypeModule;
 import com.aplose.smooss.model.PicturesModule;
 import com.aplose.smooss.model.PlaylistModule;
-
+//Flavien && Rachid : Create class FactoryModule
 public class FactoryModule {
 	public Module creerModule(TypeModule type) {
 		Module module = null;

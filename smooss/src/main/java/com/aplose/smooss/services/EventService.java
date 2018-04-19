@@ -48,6 +48,8 @@ public class EventService {
 		List<Event> result = queryFindEventByUser.getResultList();
 		return result;
 	}
+
+	// Flavien && Rachid : START: ajout d'un module à un event
 	public void addModuleByEvent(Event evt, TypeModule tm) {
 		Module m = fm.creerModule(tm);
 		evt.getModules().add(m);
@@ -56,12 +58,22 @@ public class EventService {
 		JPASingleton.getInstance().getEntityManager().merge(evt);
 		JPASingleton.getInstance().getEntityManager().getTransaction().commit();
 	}
-	
+	// Flavien && Rachid : END
 
 	public void modify(Event evt) {
 		JPASingleton.getInstance().getEntityManager().getTransaction().begin();
 		JPASingleton.getInstance().getEntityManager().merge(evt);
 		JPASingleton.getInstance().getEntityManager().getTransaction().commit();
 	}
-	
+
+	// Rachid :START : Ajout(partage) d'un user à un event : A COMITER SOUS VERIF
+	public void addUserByEvent(Event evt, User user) {
+		if (!evt.getParticipants().contains(user)){
+			evt.getParticipants().add(user);
+			JPASingleton.getInstance().getEntityManager().getTransaction().begin();
+			JPASingleton.getInstance().getEntityManager().merge(evt);
+			JPASingleton.getInstance().getEntityManager().getTransaction().commit();
+		}
+	}
+	// Rachid :END
 }
