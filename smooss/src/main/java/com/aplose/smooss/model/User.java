@@ -81,4 +81,10 @@ public class User{
 	}
 	/* << Cynthia & Ju */
 
+	public void update(String email, String password, String firstName, String lastName, String nickName,
+			String picture) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

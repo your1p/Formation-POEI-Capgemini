@@ -42,11 +42,9 @@ public class UserService {
 	 * @param u La personne à mettre à jour dans la base de données.
 	 * @return La personne mise à jour
 	 */
-	public User update(User u) {
-		
-		u = JPASingleton.getInstance().getEntityManager().find(User.class, u);
-		
-		System.out.println("boubou >> " + u);
+	public User update(String email, String password, String firstName, String lastName, String nickName, String picture) {
+		User u = new User();
+		User u2 = JPASingleton.getInstance().getEntityManager().find(User.class, u);
 		
 		JPASingleton.getInstance().getEntityManager().getTransaction().begin();
 		JPASingleton.getInstance().getEntityManager().merge(u);
@@ -77,9 +75,5 @@ public class UserService {
 		
 	}
 	
-	
-	
-	
-
 }
 
