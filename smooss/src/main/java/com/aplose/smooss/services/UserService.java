@@ -1,8 +1,10 @@
 package com.aplose.smooss.services;
 
 import javax.persistence.NoResultException;
+import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
 
+import com.aplose.smooss.exception.EmailException;
 import com.aplose.smooss.model.User;
 
 public class UserService {
@@ -20,11 +22,18 @@ public class UserService {
 		return INSTANCE;
 	}
 
-	public void create(User u) {
+	public void create(User u) throws EmailException {
 
-		JPASingleton.getInstance().getEntityManager().getTransaction().begin();
-		JPASingleton.getInstance().getEntityManager().persist(u);
-		JPASingleton.getInstance().getEntityManager().getTransaction().commit();
+		try {
+			JPASingleton.getInstance().getEntityManager().getTransaction().begin();
+			JPASingleton.getInstance().getEntityManager().persist(u);
+			JPASingleton.getInstance().getEntityManager().getTransaction().commit();
+		}catch(PersistenceException e) {
+			JPASingleton.getInstance().getEntityManager().getTransaction().rollback();
+			u.setId(0);
+			
+			throw new EmailException("Oh mec t'as déjà un compte SMOOS Connecte-toi!");
+		}
 
 	}
 
