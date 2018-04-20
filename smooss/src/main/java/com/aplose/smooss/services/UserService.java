@@ -3,12 +3,15 @@ package com.aplose.smooss.services;
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 import com.aplose.smooss.model.User;
 
 public class UserService {
 
 	private static UserService INSTANCE = null;
 	private TypedQuery<User> findByEmailAndPasswords;
+	private TypedQuery<User> md5hash;
 
 	private UserService() {
 	}
@@ -61,7 +64,7 @@ public class UserService {
 		}
 		
 		findByEmailAndPasswords.setParameter("email", email);
-		findByEmailAndPasswords.setParameter("password", password);
+		findByEmailAndPasswords.setParameter("password", new DigestUtils(DigestUtils.getDigest("MD5")).digestAsHex(password));
 		
 		try {
 			u = findByEmailAndPasswords.getSingleResult();
@@ -74,6 +77,4 @@ public class UserService {
 		return u;
 		
 	}
-	
 }
-

@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 @Entity
 public class User{
 
@@ -23,7 +25,7 @@ public class User{
 	public User(String email, String password, String firstName, String lastName, String nickName, String picture) {
 		
 		this.email = email;
-		this.password = password;
+		this.password = new DigestUtils(DigestUtils.getDigest("MD5")).digestAsHex(password);
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.nickName = nickName;
@@ -49,7 +51,7 @@ public class User{
 		return password;
 	}
 	public void setPassword(String password) {
-		this.password = password;
+		this.password = new DigestUtils(DigestUtils.getDigest("MD5")).digestAsHex(password);	
 	}
 
 	/* Cynthia & Ju >>*/
