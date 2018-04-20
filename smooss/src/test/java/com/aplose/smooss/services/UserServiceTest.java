@@ -37,7 +37,7 @@ public class UserServiceTest extends TestCase {
 		
 		if(u.getId()> 0 ) {
 			System.out.println("On récupère l'id : "+id);
-			us.update(u);
+//			us.update(u);
 		}
 		
 		
