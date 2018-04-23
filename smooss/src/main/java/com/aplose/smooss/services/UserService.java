@@ -39,7 +39,7 @@ public class UserService {
 
 	}
 
-	public User read(long id) {
+	public User read(long id) { 
 
 		User u = JPASingleton.getInstance().getEntityManager().find(User.class, id);
 		return u;
@@ -53,14 +53,13 @@ public class UserService {
 	 * @param u La personne à mettre à jour dans la base de données.
 	 * @return La personne mise à jour
 	 */
-	public User update(String email, String password, String firstName, String lastName, String nickName, String picture) {
-		User u = new User();
-		User u2 = JPASingleton.getInstance().getEntityManager().find(User.class, u);
+	public User update(User u) {
+		User newU = JPASingleton.getInstance().getEntityManager().find(User.class, u);
 		
 		JPASingleton.getInstance().getEntityManager().getTransaction().begin();
 		JPASingleton.getInstance().getEntityManager().merge(u);
 		JPASingleton.getInstance().getEntityManager().getTransaction().commit();
-		return u;
+		return newU;
 	}
 	
 	public User findByEmailAndPassword(String email, String password) {
