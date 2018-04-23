@@ -77,4 +77,10 @@ public class UserService {
 		return u;
 		
 	}
+
+	public User read(String email, String password, String firstName, String lastName, String nickName,
+			String picture) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
