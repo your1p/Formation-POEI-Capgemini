@@ -3,6 +3,7 @@ package com.aplose.smooss.services;
 import java.time.Instant;
 import java.util.List;
 
+import com.aplose.smooss.exception.EmailException;
 import com.aplose.smooss.model.Event;
 import com.aplose.smooss.model.User;
 
@@ -10,7 +11,7 @@ import junit.framework.TestCase;
 
 public class EventServiceTest extends TestCase {
 	
-	public void testFindEventsByUser() {
+	public void testFindEventsByUser() throws EmailException {
 		
 		UserService us = UserService.getInstance();
 		User u = new User();
