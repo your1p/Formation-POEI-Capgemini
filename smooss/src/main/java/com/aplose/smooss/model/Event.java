@@ -35,6 +35,17 @@ public class Event{
 	@ManyToMany
 	List<User> participants = new ArrayList<User>();
 
+	public Event() {}
+	
+	public Event(User admin, String name, String description, String localisation, Instant start, Instant end, String picture) {	
+		this.admin = admin;
+		this.name = name;
+		this.description = description;
+		this.localisation = localisation;
+		this.start = start;
+		this.end = end;
+		this.picture = picture;
+	}
 	
 	public long getId() {
 		return id;
