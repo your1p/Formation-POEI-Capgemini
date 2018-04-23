@@ -2,6 +2,7 @@ package com.aplose.smooss.services;
 
 import javax.persistence.PersistenceException;
 
+import com.aplose.smooss.exception.EmailException;
 import com.aplose.smooss.model.User;
 
 import junit.framework.TestCase;
@@ -25,7 +26,7 @@ public class UserServiceTest extends TestCase {
 //		
 //	}
 	
-	public void testCreate() {
+	public void testCreate() throws EmailException {
 		UserService us = UserService.getInstance();
 		User u = createGustave("gustave@gmail.com");
 		us.create(u);
