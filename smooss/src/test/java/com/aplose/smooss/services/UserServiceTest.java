@@ -1,5 +1,7 @@
 package com.aplose.smooss.services;
 
+import javax.persistence.PersistenceException;
+
 import com.aplose.smooss.model.User;
 
 import junit.framework.TestCase;
@@ -23,6 +25,20 @@ public class UserServiceTest extends TestCase {
 //		
 //	}
 	
+	public void testCreate() {
+		UserService us = UserService.getInstance();
+		User u = createGustave("gustave@gmail.com");
+		us.create(u);
+		assertTrue(u.getId()>0);
+		
+		User u2 = createGustave("gustave@gmail.com");		
+		
+		us.create(u2);
+		
+		assertFalse(u2.getId()>0);
+		
+	}
+	
 	public void testUpdate() {
 		
 		
@@ -45,5 +61,13 @@ public class UserServiceTest extends TestCase {
 		assertNull(u3);
 
 	}
-
+	
+	private User createGustave(String email) {
+		User u = new User();
+		u.setEmail(email);
+		u.setFirstName("Gustave");
+		u.setLastName("Flaubert");
+		u.setPassword("password");
+		return u;
+	}
 }
