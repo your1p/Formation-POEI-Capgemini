@@ -58,30 +58,5 @@ public class EventServiceTest extends TestCase {
 		
 		
 	}
-	
-	public void testDelete() {
-		
-		
-		EventService es = EventService.getInstance();
-		Event e = new Event();
-		
-		e.setName("Happy Birthday");
-		e.setDescription("Anniversaire de bob");
-		e.setLocalisation("Rond point du grand M");
-		e.setStart(Instant.now());
-		e.setEnd(Instant.parse("2018-04-18T22:00:00Z"));
-		es.create(e);
-		long id = e.getId();
-				
-		Event e2 = es.read(id);
-		assertNotNull(e2);
-		assertEquals(e2, e);
-		es.delete(e2);
-		
-		Event e3 = es.read(id);
-		assertNull(e3);
-		
-		
-	}
 
 }
