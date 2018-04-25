@@ -1,7 +1,5 @@
 package com.aplose.smooss.services;
 
-import javax.persistence.PersistenceException;
-
 import com.aplose.smooss.exception.EmailException;
 import com.aplose.smooss.model.User;
 
