@@ -33,12 +33,6 @@ public class EventService {
 		JPASingleton.getInstance().getEntityManager().persist(evt);
 		JPASingleton.getInstance().getEntityManager().getTransaction().commit();
 	}
-	
-	public void delete(Event evt) {
-		JPASingleton.getInstance().getEntityManager().getTransaction().begin();
-		JPASingleton.getInstance().getEntityManager().remove(evt);
-		JPASingleton.getInstance().getEntityManager().getTransaction().commit();
-	}
 
 	public Event read(long id) {
 		Event evt = JPASingleton.getInstance().getEntityManager().find(Event.class, id);

@@ -1,6 +1,5 @@
 package com.aplose.smooss.model;
 
-import java.awt.Image;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -21,6 +21,7 @@ public class Picture {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
+	@Lob
 	private String pictureBase64;
 	private String name;
 	private String description;
