@@ -1,5 +1,7 @@
 package com.aplose.smooss.services;
 
+import javax.persistence.PersistenceException;
+
 import com.aplose.smooss.exception.EmailException;
 import com.aplose.smooss.model.User;
 
@@ -57,17 +59,18 @@ public class UserServiceTest extends TestCase {
 		u.setEmail("bouboulogin");
 		u.setFirstName("majinbou");
 		u.setPassword("bouboukiki");
-
-		if (u.getId() > 0) {
-			System.out.println("On récupère l'id : " + id);
-			// us.update(u);
+		
+		if(u.getId()> 0 ) {
+			System.out.println("On récupère l'id : "+id);
+//			us.update(u);
 		}
-
+		
+		
 		User u3 = us.findByEmailAndPassword("Gustave", "badpassword");
 		assertNull(u3);
 
 	}
-
+	
 	private User createGustave(String email) {
 		User u = new User();
 		u.setEmail(email);
