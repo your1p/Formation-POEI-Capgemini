@@ -3,7 +3,7 @@ package com.aplose.smooss.model;
 import javax.persistence.Entity;
 
 @Entity
-public class MiniGameModule {
+public class MiniGameModule extends Module{
 	
 	private Long id; 
 	

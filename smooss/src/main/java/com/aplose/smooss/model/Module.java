@@ -21,6 +21,6 @@ public abstract class Module {
 	}
 	
 	public enum TypeModule {
-		CarpoolingModule, BringModule, PicturesModule, PlaylistModule,
+		PlaylistModule,TriCountModule,PicturesModule,ChatModule,MiniGameModule,CarpoolingModule,BringModule
 	}
 }

@@ -3,7 +3,7 @@ package com.aplose.smooss.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TriCountModule {
+public class TriCountModule extends Module{
 	
 	private Long id;
 	

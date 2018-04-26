@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
 @Entity
-public class ChatModule {
+public class ChatModule extends Module{
 	
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id; 
