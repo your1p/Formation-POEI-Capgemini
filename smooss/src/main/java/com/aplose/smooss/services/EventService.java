@@ -1,8 +1,10 @@
 package com.aplose.smooss.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
 import com.aplose.smooss.factory.FactoryModule;
@@ -45,7 +47,12 @@ public class EventService {
 			queryFindEventByUser = em.createQuery("SELECT e FROM Event e WHERE admin = :user ", Event.class);
 		}
 		queryFindEventByUser.setParameter("user", user);
-		List<Event> result = queryFindEventByUser.getResultList();
+		List<Event> result = null;
+		try {
+			result = queryFindEventByUser.getResultList();
+		}catch (NoResultException nre) {
+			result = new ArrayList<Event>();
+		}
 		return result;
 	}
 
