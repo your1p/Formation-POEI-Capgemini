@@ -3,6 +3,7 @@ package com.aplose.smooss.services;
 import java.time.Instant;
 import java.util.List;
 
+import com.aplose.smooss.exception.EmailException;
 import com.aplose.smooss.model.Event;
 import com.aplose.smooss.model.User;
 
@@ -16,7 +17,12 @@ public class EventServiceTest extends TestCase {
 		User u = new User();
 		u.setEmail("Gustave");
 		u.setPassword("password");
-		us.create(u);
+		try {
+			us.create(u);
+		} catch (EmailException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		
 		EventService es = EventService.getInstance();
 		Event e = new Event();
