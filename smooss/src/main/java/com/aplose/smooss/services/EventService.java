@@ -72,6 +72,12 @@ public class EventService {
 		JPASingleton.getInstance().getEntityManager().merge(evt);
 		JPASingleton.getInstance().getEntityManager().getTransaction().commit();
 	}
+	
+	public void delete(Event evt) {
+		JPASingleton.getInstance().getEntityManager().getTransaction().begin();
+		JPASingleton.getInstance().getEntityManager().remove(evt);
+		JPASingleton.getInstance().getEntityManager().getTransaction().commit();
+	}
 
 	// Rachid :START : Ajout(partage) d'un user à un event : A COMITER SOUS VERIF
 	public void addUserByEvent(Event evt, User user) {
