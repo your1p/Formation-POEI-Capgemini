@@ -3,6 +3,7 @@ package com.aplose.smooss.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -37,6 +38,10 @@ public class Picture {
 		this.name = name;
 		this.description = description;
 		this.author = author;
+	}
+	
+	public void setPictureBase64(String pictureBase64){
+		this.pictureBase64 = pictureBase64;
 	}
 	
 	public String getPictureBase64(){
