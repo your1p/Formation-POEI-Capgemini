@@ -30,6 +30,6 @@ public abstract class Module {
 	}
 	
 	public enum TypeModule {
-		DefaultType, CarpoolingModule, BringModule, PicturesModule, PlaylistModule,
+		DefaultType, PlaylistModule, TriCountModule, PicturesModule, ChatModule, MiniGameModule, CarpoolingModule, BringModule
 	}
 }

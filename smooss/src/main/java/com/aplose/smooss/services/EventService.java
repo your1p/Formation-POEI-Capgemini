@@ -1,9 +1,11 @@
 package com.aplose.smooss.services;
 
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
 import com.aplose.smooss.factory.FactoryModule;
@@ -54,7 +56,12 @@ public class EventService {
 			queryFindEventByUser = em.createQuery("SELECT e FROM Event e WHERE admin = :user ", Event.class);
 		}
 		queryFindEventByUser.setParameter("user", user);
-		List<Event> result = queryFindEventByUser.getResultList();
+		List<Event> result = null;
+		try {
+			result = queryFindEventByUser.getResultList();
+		}catch (NoResultException nre) {
+			result = new ArrayList<Event>();
+		}
 		return result;
 	}
 	
@@ -79,6 +86,12 @@ public class EventService {
 		JPASingleton.getInstance().getEntityManager().getTransaction().commit();
 	}
 	// Flavien && Rachid : END
+	
+	public void delete(Event evt) {
+		JPASingleton.getInstance().getEntityManager().getTransaction().begin();
+		JPASingleton.getInstance().getEntityManager().remove(evt);
+		JPASingleton.getInstance().getEntityManager().getTransaction().commit();
+	}
 
 	// Rachid :START : Ajout(partage) d'un user à un event : A COMITER SOUS VERIF
 	public void addUserByEvent(Event evt, User user) {
