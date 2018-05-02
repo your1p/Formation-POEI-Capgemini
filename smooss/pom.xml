@@ -59,5 +59,11 @@
 			<version>2.4.0</version>
 			<scope>test</scope>
 		</dependency>
+	 <dependency>
+	  <groupId>maven</groupId>
+	  <artifactId>maven-jdepend-plugin</artifactId>
+	  <version>1.6.1</version>
+	  <type>plugin</type>
+	 </dependency>
 	</dependencies>
 </project>
