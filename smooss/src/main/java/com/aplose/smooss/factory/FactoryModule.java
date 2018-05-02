@@ -14,19 +14,15 @@ public class FactoryModule {
 		switch (type) {
 		case CarpoolingModule:
 			module = new CarPoolingModule();
-			module.setType(type);
 			break;
 		case BringModule:
 			module = new BringModule();
-			module.setType(type);
 			break;
 		case PicturesModule:
 			module = new PicturesModule();
-			module.setType(type);
 			break;
 		case PlaylistModule:
 			module = new PlaylistModule();
-			module.setType(type);
 			break;
 		}
 		return module;
